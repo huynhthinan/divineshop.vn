@@ -39,6 +39,11 @@ img {
 header .top-daeder {
   background: #0a59cc;
 }
+@media screen and (max-width: 576px) {
+  header .top-daeder {
+    display: none;
+  }
+}
 header .top-daeder .container {
   display: flex;
   padding-top: 10px;
@@ -95,6 +100,11 @@ header .top-daeder .container .right-header a div {
 header nav.bg-primary .navbar-brand {
   margin-right: 0;
 }
+@media screen and (max-width: 576px) {
+  header nav.bg-primary .navbar-brand {
+    display: none !important;
+  }
+}
 header nav.bg-primary .navbar-brand img {
   height: 49px;
   width: 49px;
@@ -107,6 +117,22 @@ header nav.bg-primary form {
   margin-top: -3px;
   position: relative;
   left: -10px;
+}
+@media (max-width: 767px) {
+  header nav.bg-primary form {
+    left: 0;
+    margin-top: 0;
+  }
+}
+@media (max-width: 480px) {
+  header nav.bg-primary form {
+    max-width: 205px;
+  }
+}
+@media (max-width: 374px) {
+  header nav.bg-primary form {
+    max-width: 150px;
+  }
 }
 header nav.bg-primary form .form-control {
   margin-right: 0 !important;
@@ -124,17 +150,22 @@ header nav.bg-primary form button.btn {
   border: 0;
   width: 48px;
 }
-header nav.bg-primary .register {
+header nav.bg-primary .register.home {
   margin-right: 17px;
 }
-header nav.bg-primary .register a {
+@media (max-width: 767px) {
+  header nav.bg-primary .register.home {
+    display: none !important;
+  }
+}
+header nav.bg-primary .register.home a {
   text-decoration: none;
   display: flex;
   font-size: 14px;
   font-weight: 500;
   gap: 10px;
 }
-header nav.bg-primary .register a i {
+header nav.bg-primary .register.home a i {
   border: 1px solid #f9fafb;
   width: 40px;
   height: 40px;
@@ -148,6 +179,11 @@ header nav.bg-primary .cart-header {
   padding: 8px 14px 9px;
   font-size: 14px;
   font-weight: 500;
+}
+@media (max-width: 550px) {
+  header nav.bg-primary .cart-header span:not(.badge) {
+    display: none;
+  }
 }
 header nav.bg-primary .cart-header .badge {
   margin-left: 0;
@@ -164,9 +200,92 @@ header #mainNavbar {
   transition: all 0.3s ease-in-out;
   width: 280px;
   z-index: 999;
+  padding: 0 !important;
+}
+header #mainNavbar .show {
+  display: block !important;
+  display: flex;
+  flex-direction: column;
+}
+header #mainNavbar::before {
+  content: "";
+  position: absolute;
+  right: calc((100vw - 100%) / 2 * -2);
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  pointer-events: none;
+}
+header #mainNavbar .bg {
+  height: 100%;
+  background: #fff;
+  position: relative;
+}
+header #mainNavbar .register {
+  background-color: #2579f2;
+  padding: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+header #mainNavbar .register a {
+  text-decoration: none;
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  gap: 10px;
+}
+header #mainNavbar .register a i {
+  border: 1px solid #f9fafb;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+}
+header #mainNavbar .list-group {
+  font-size: 0.875em;
+  font-weight: 600;
+  background-color: #fff;
+  padding: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  height: 100%;
+  border-bottom: rgba(156, 163, 175, 0.25) 1px solid;
+  padding-bottom: 1.25rem;
+  border-radius: 0;
+  position: relative;
+  z-index: 1;
+}
+header #mainNavbar .list-group a {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-top: 0.75rem;
+  font-size: 14px;
+}
+header #mainNavbar .list-group a:hover {
+  background-color: #f3f4f6;
+}
+header #mainNavbar .list-group a i {
+  font-size: 20px;
+}
+header #mainNavbar .list-group a .f {
+  text-overflow: ellipsis;
 }
 header .nav-km {
   padding-bottom: 21px !important;
+}
+@media screen and (max-width: 575px) {
+  header .nav-km {
+    display: none;
+  }
 }
 header .nav-km .container {
   justify-content: space-between !important;
@@ -183,6 +302,11 @@ header .bg-white.border-top {
   display: flex;
   align-items: center;
   padding: 3px 0 10px !important;
+}
+@media screen and (max-width: 575px) {
+  header .bg-white.border-top {
+    display: none;
+  }
 }
 header .bg-white.border-top .container {
   justify-content: space-between;
@@ -238,9 +362,20 @@ header .bg-white.border-top .dm-sp-right a:nth-of-type(4) i {
   margin-top: 0 !important;
   padding-bottom: 0.75rem !important;
 }
+@media (max-width: 991px) {
+  .main-content .container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
 @media (min-width: 992px) {
   .main-content .left-menu {
     flex-basis: 20.83333333%;
+  }
+}
+@media (max-width: 576px) {
+  .main-content .left-menu {
+    display: none;
   }
 }
 .main-content .left-menu .list-group {
@@ -269,6 +404,11 @@ header .bg-white.border-top .dm-sp-right a:nth-of-type(4) i {
 }
 .main-content .left-menu .list-group a .f {
   text-overflow: ellipsis;
+}
+@media (max-width: 550px) {
+  .main-content .left-menu {
+    display: none;
+  }
 }
 .main-content .main-dlider {
   position: relative;
@@ -303,28 +443,13 @@ header .bg-white.border-top .dm-sp-right a:nth-of-type(4) i {
   .main-content .right-banner {
     flex-basis: 25%;
     flex-direction: column;
-  }
-}
-.main-content .right-banner img {
-  width: calc((100% - 22px) / 2);
-  height: 100%;
-}
-@media (min-width: 992px) {
-  .main-content .right-banner img {
-    margin-bottom: 22px !important;
-    height: calc((100% - 22px) / 2);
-    max-height: calc((100% - 1.5rem) / 2);
-    -o-object-fit: cover;
-       object-fit: cover;
+    gap: 1.5rem;
   }
 }
 .main-content .banner-four a {
   border-radius: 5px;
   overflow: hidden;
   display: inline-block;
-}
-.main-content .banner-four a img {
-  width: 100%;
 }
 .main-content .main-title h2 {
   font-size: 21px;
@@ -351,6 +476,11 @@ header .bg-white.border-top .dm-sp-right a:nth-of-type(4) i {
   line-height: 21px;
   margin-bottom: 22px;
 }
+@media (max-width: 767px) {
+  .main-content .product-top .product-item {
+    width: 50%;
+  }
+}
 .main-content .product-top .product-item img {
   border-radius: 0.375rem;
 }
@@ -363,12 +493,18 @@ header .bg-white.border-top .dm-sp-right a:nth-of-type(4) i {
 }
 .main-content .product-top .product-item h3 a {
   color: inherit;
+  text-decoration: none;
 }
 .main-content .product-top .product-item .product-price {
   display: flex;
   font-size: 14px;
   gap: 5px;
   margin-top: 10px;
+}
+@media (max-width: 480px) {
+  .main-content .product-top .product-item .product-price {
+    flex-wrap: wrap;
+  }
 }
 .main-content .product-top .product-item .product-price .be {
   font-weight: 600;
@@ -377,10 +513,17 @@ header .bg-white.border-top .dm-sp-right a:nth-of-type(4) i {
   text-decoration-line: line-through;
   color: #9ca3af;
 }
-.main-content .product-top .product-item .product-price div {
+.main-content .product-top .product-item .product-price div:nth-of-type(3) {
   margin-left: 10px;
   position: relative;
   top: -2px;
+}
+@media (max-width: 480px) {
+  .main-content .product-top .product-item .product-price div:nth-of-type(3) {
+    top: 0;
+    width: 100%;
+    margin-left: 0;
+  }
 }
 .main-content .product-top .product-item .product-price div small {
   background: #dc3545;
@@ -455,6 +598,7 @@ footer .accout-footer .accout-bottom button.b {
   line-height: 40px;
   border-radius: 5px;
   padding: 0 8px;
+  min-width: 120px;
 }
 footer .accout-footer .accout-bottom div {
   font-size: 14px;
@@ -467,6 +611,11 @@ footer .accout-footer .accout-bottom .be {
   background-image: none;
   color: #fff;
   font-weight: 500;
+}
+@media (max-width: 375px) {
+  footer .accout-footer .accout-bottom .be {
+    padding: 0;
+  }
 }
 footer .pay-footer {
   background: #fff;
@@ -526,6 +675,9 @@ footer .menu-footer .list-menu .menu:nth-of-type(2) {
 footer .menu-footer .list-menu .menu:nth-of-type(3) {
   width: 280px;
 }
+footer .menu-footer .list-menu .menu:nth-of-type(3) li:nth-of-type(1) a {
+  color: #dc3545;
+}
 footer .menu-footer .list-menu .menu h3 {
   font-size: 14px;
   line-height: 21px;
@@ -553,6 +705,7 @@ footer .menu-footer .logo-footer {
   footer .menu-footer .logo-footer {
     max-width: 100%;
     width: 100%;
+    margin-top: 24px;
   }
 }
 @media (max-width: 767px) {
@@ -566,5 +719,15 @@ footer .menu-footer .logo-footer {
 }
 
 .navbar-toggler {
-  background-color: #fff;
+  background: none;
+  color: #fff;
+  padding: 0;
+  border: 0;
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+}
+.navbar-toggler .navbar-toggler-icon {
+  background: none;
 }/*# sourceMappingURL=style.css.map */
